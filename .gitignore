@@ -1,0 +1,39 @@
+# Built files and outputs
+build/
+app/build/
+*.apk
+*.ap_
+*.aab
+*.dex
+*.class
+
+# Gradle files
+.gradle/
+gradle-app.setting
+!gradle-wrapper.jar
+
+# Local configuration and properties
+local.properties
+secrets.properties
+
+# IDE files
+.idea/
+*.iml
+.DS_Store
+/captures
+.externalNativeBuild
+.cxx
+
+# Keystores & Signing Credentials
+*.jks
+*.keystore
+*.p12
+*.pem
+*.key
+release.keystore
+debug.keystore
+
+# Sensitive configuration & keys
+*jwt_secret*
+*api_key*
+*private_key*
