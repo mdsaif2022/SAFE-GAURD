@@ -6,6 +6,9 @@ on:
       - 'v*'
   workflow_dispatch:
 
+permissions:
+  contents: write
+
 jobs:
   build-release:
     name: Build & Publish Release APK
@@ -24,8 +27,10 @@ jobs:
       - name: Setup Gradle & Cache
         uses: gradle/actions/setup-gradle@v3
 
-      - name: Make Gradle Wrapper Executable
-        run: chmod +x gradlew
+      - name: Fix gradlew Line Endings & Executable Permission
+        run: |
+          sed -i 's/\r$//' gradlew
+          chmod +x gradlew
 
       - name: Run Android Lint Checks
         run: ./gradlew lintDebug
